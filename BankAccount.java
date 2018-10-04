@@ -13,4 +13,7 @@ return balance;
 public int getAccountID() {
 return accountID;
 }
+public void setPassword(String password) {
+this.password = password;
+}
 }
