@@ -16,24 +16,39 @@ return accountID;
 public void setPassword(String newpassword) {
 password = newpassword;
 }
+public String getPassword() {
+return password;
+} 
 public String toString() {
 return accountID + "\t" + balance;
 }
-public String deposit(double amount) {
+public boolean deposit(double amount) {
 if (amount > 0) {
 balance = balance + amount;
-return "Operation success!";
+return true;
 }
-return "Invalid amount";
+return false;
 }
-public String withdraw(double amount) {
+public boolean withdraw(double amount) {
 if (amount > 0) {
 if (amount <= balance) {
 balance = balance - amount;
-return "Operation success!";
+return true;
 }
-return "Insufficient funds";
+return false;
 }
-return "Invalid amount";
+return false;
+}
+private boolean authenticate(String password) {
+if (this.password.equals(password))
+return true;
+return false;
+}
+public boolean transferTo(BankAccount other, double amount, String password) {
+if (other.authenticate(password) && withdraw(amount)) {
+other.deposit(amount);
+return true;
+}
+return false;
 }
 }
