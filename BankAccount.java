@@ -13,7 +13,10 @@ return balance;
 public int getAccountID() {
 return accountID;
 }
-public void setPassword(String password) {
-this.password = password;
+public void setPassword(String newpassword) {
+password = newpassword;
+}
+public String toString() {
+return accountID + "\t" + balance;
 }
 }
