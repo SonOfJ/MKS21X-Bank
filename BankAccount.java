@@ -19,4 +19,21 @@ password = newpassword;
 public String toString() {
 return accountID + "\t" + balance;
 }
+public String deposit(double amount) {
+if (amount > 0) {
+balance = balance + amount;
+return "Operation success!";
+}
+return "Invalid amount";
+}
+public String withdraw(double amount) {
+if (amount > 0) {
+if (amount <= balance) {
+balance = balance - amount;
+return "Operation success!";
+}
+return "Insufficient funds";
+}
+return "Invalid amount";
+}
 }
