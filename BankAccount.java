@@ -7,4 +7,10 @@ this.balance = balance;
 this.accountID = accountID;
 this.password = password;
 }
+public double getBalance() {
+return balance;
+}
+public int getAccountID() {
+return accountID;
+}
 }
